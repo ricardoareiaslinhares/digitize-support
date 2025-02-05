@@ -13,13 +13,7 @@ const FullNavbar = ({}: Props) => {
   const myLinks: LinkType[] = [
     { name: "Inicial", href: "/" },
 
-    {
-      name: text[language].navbar.sobre.title,
-      link: [
-        { name: text[language].navbar.sobre.link1, href: "/sobre/psicologo" },
-        { name: text[language].navbar.sobre.link2, href: "/sobre/psicologia" },
-      ],
-    },
+ 
 
     {
       name: text[language].navbar.servicos.title,
@@ -34,6 +28,8 @@ const FullNavbar = ({}: Props) => {
         },
       ],
     },
+    { name: text[language].navbar.preços, href: "/pricing" },
+    { name: text[language].navbar.sobre.title, href: "/about" },
 
     { name: text[language].navbar.blog, href: "/blog" },
   ];

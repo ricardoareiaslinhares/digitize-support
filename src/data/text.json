@@ -27,15 +27,20 @@
     "navbar": {
       "home": "Home",
       "sobre": {
-        "title": "Sobre",
-        "link1": "Sobre o Psicólogo",
-        "link2": "Sobre a Psicologia"
+        "title": "Sobre"
+      },
+      "askTherapist": {
+        "title": "Pergunte a um Psicólogo"
+      },
+      "personalidade": {
+        "title": "Teste de Personalidade"
       },
       "servicos": {
         "title": "Serviços",
-        "link1": "Consultas Psicologia",
-        "link2": "Preparação R&S"
+        "link1": "Teste de Personalidade",
+        "link2": "Pergunte a um Psicólogo"
       },
+      "preços": "Preços",
       "blog": "Blog"
     },
     "sobrePsicologo":{

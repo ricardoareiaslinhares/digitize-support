@@ -17,6 +17,8 @@ import Link from "next/link";
 import { LinkType } from "@/types";
 import { ThemeToggle } from "../ThemeToggle";
 import { useRouter } from "next/router";
+import { Button } from "../ui/button";
+import LoginButton from "./LoginButton";
 
 type Props = {
   className?: string;
@@ -39,6 +41,7 @@ const NavbarShad = ({ className, myLinks }: Props) => {
         >
           <NavigationMenuLink className={navigationMenuTriggerStyle()}>
             {children}
+
           </NavigationMenuLink>
         </Link>
       </li>
@@ -76,7 +79,7 @@ const NavbarShad = ({ className, myLinks }: Props) => {
             );
           } else {
             return (
-              <NavigationMenuItem key={link.href}>
+              <NavigationMenuItem key={link.href} className="">
                 <Link href={link.href ?? ""} legacyBehavior passHref className="text-lg">
                   <NavigationMenuLink className={`${navigationMenuTriggerStyle()} `}>
                     {link.name}
@@ -97,9 +100,10 @@ const NavbarShad = ({ className, myLinks }: Props) => {
         <NavigationMenu className="">
           <NavigationMenuList className={""}>
             <RenderNav />
+           
           </NavigationMenuList>
         </NavigationMenu>
-
+        <LoginButton isLoggedIn={true}/>
         <ThemeToggle />
       </span>
     </>
