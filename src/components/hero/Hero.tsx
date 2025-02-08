@@ -19,7 +19,7 @@ const Hero = ({}: Props) => {
     return () => clearTimeout(timeout);
   }, []);
   return (
-    <div className="flex flex-row w-full min-h-[580px]  overflow-hidden justify-center relative ">
+    <div className="flex flex-row w-full min-h-[580px]  overflow-hidden justify-center relative pb-8 -mt-16 ">
       <Image
         width={0}
         height={0}
@@ -28,19 +28,17 @@ const Hero = ({}: Props) => {
         sizes="100vw"
         src="/hero.jpg"
         alt="hero"
-        className="bg-cover bg-center bg-no-repeat absolute -z-1 object-cover w-full h-full "
+        className="bg-cover bg-center bg-no-repeat absolute -z-1 object-cover w-full h-full brightness-90"
       />
-      <div className="z-10 flex  flex-col gap-8 max-w-7xl items-center sm:items-start justify-center mt-8">
+      <div className="z-10 flex  flex-col gap-8 max-w-7xl items-center sm:items-start justify-center mt-20">
         <div className="flex flex-col gap-y-4 max-w-md  sm:max-w-max items-center md:items-start ">
-          <h1 className="text-7xl  font-patrick font-bold italic text-center md:text-left md:ml-4 mb-4 drop-shadow-md ">
+          <h1 className="text-7xl  font-patrick font-bold italic text-center md:text-left md:ml-4 mb-4 drop-shadow-md text-white  ">
             {text[language].slogan}
           </h1>
           <div className="flex flex-col justify-center sm:ml-8 gap-4 drop-shadow-sm max-w-[500px]  ">
-            <p className=" text-lg sm:text-xl   ">
-              <strong>
-                DigitizeSupport interliga psicologia e tecnologia para lhe
-                ajudar a se conhecer melhor e a ter o apoio profissional que
-                precisa.
+            <p className=" text-lg sm:text-xl text-white   ">
+              <strong className="leading-8">
+              {text[language].companyDesc}
               </strong>
             </p>
 

@@ -1,19 +1,32 @@
-import React from 'react'
-import NavbarShad from './NavbarShad'
-import Logo from './Logo'
-import { Drawer } from './Drawer'
+"use client";
+import React, { useEffect, useState } from "react";
+import NavbarShad from "./NavbarShad";
+import Logo from "./Logo";
+import { Drawer } from "./Drawer";
 import { language } from "@/utils/language";
 import text from "@/data/text.json";
-import { LinkType } from '@/types';
+import { LinkType } from "@/types";
 
-type Props = {}
+type Props = {};
 
 const FullNavbar = ({}: Props) => {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 64) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const myLinks: LinkType[] = [
     { name: "Inicial", href: "/" },
-
- 
 
     {
       name: text[language].navbar.servicos.title,
@@ -35,15 +48,18 @@ const FullNavbar = ({}: Props) => {
   ];
 
   return (
-    <nav className="flex h-16 sticky top-0 left-0 flex-row w-full z-50 justify-between items-center px-8 bg-background/90 backdrop-blur-sm shadow-sm">
-        <Logo/>
-        <span>
-
-        <NavbarShad myLinks={myLinks}/>
-        <Drawer  myLinks={myLinks}/>
-        </span>
+    <nav
+      className={`flex h-16 sticky top-0 left-0 flex-row w-full z-50 justify-between items-center px-8 bg-background/0  transition-colors duration-300 ${
+        scrolled ? "bg-white shadow-md text-black" : "bg-transparent text-white"
+      }`}
+    >
+      <Logo />
+      <span>
+        <NavbarShad myLinks={myLinks} scrolled={scrolled} />
+        <Drawer myLinks={myLinks} />
+      </span>
     </nav>
-  )
-}
+  );
+};
 
-export default FullNavbar
+export default FullNavbar;

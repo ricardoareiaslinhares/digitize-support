@@ -23,9 +23,10 @@ import LoginButton from "./LoginButton";
 type Props = {
   className?: string;
   myLinks: LinkType[];
+  scrolled: boolean;
 };
 
-const NavbarShad = ({ className, myLinks }: Props) => {
+const NavbarShad = ({ className, myLinks, scrolled }: Props) => {
   const ListItem = React.forwardRef<
     React.ElementRef<"a">,
     React.ComponentPropsWithoutRef<"a">
@@ -104,7 +105,7 @@ const NavbarShad = ({ className, myLinks }: Props) => {
           </NavigationMenuList>
         </NavigationMenu>
         <LoginButton isLoggedIn={true}/>
-        <ThemeToggle />
+        <ThemeToggle scrolled={scrolled} />
       </span>
     </>
   );

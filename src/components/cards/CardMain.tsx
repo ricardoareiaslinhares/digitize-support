@@ -34,7 +34,7 @@ const CardMain = ({
     <div
       onClick={handleClick}
       className={`
-        transform transition-all duration-500 ease-out ${
+        transform transition-all duration-800 ease-out ${
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
       }
         
