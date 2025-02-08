@@ -19,7 +19,10 @@ const config = {
     },
     extend: {
       fontFamily: {
-        sans: ["var(--font-inter)"]
+        sans: ["var(--font-inter)"],
+        handwriting: ['Dancing Script', 'cursive'],
+        gloria: ['Gloria', 'cursive'],
+        patrick: ['Patrick', 'cursive'],
       },
       transitionProperty: {
         'height': 'height',

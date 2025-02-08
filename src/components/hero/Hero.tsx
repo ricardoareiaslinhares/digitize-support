@@ -1,40 +1,76 @@
-import React from 'react'
-import Image from 'next/image'
-type Props = {}
+"use client"
+import React, { useEffect, useState } from "react";
+import Image from "next/image";
+type Props = {};
+import text from "@/data/text.json";
+import { language } from "@/utils/language";
+import CardMain from "../cards/CardMain";
+import { Button } from "../ui/button";
+import { time } from "console";
 
 const Hero = ({}: Props) => {
+  const [isVisible, setIsVisible] = useState(false);
+  useEffect(() => {
+    // make a timeout function
+    const timeout = setTimeout(() => {
+      setIsVisible(true);
+    }, 300);
+    // clear the timeout function
+    return () => clearTimeout(timeout);
+  }, []);
   return (
-    <div 
-    className='flex flex-col w-full h-80  overflow-hidden justify-center relative'
-   
-    >
-        <Image
-         width={0}
+    <div className="flex flex-row w-full min-h-[580px]  overflow-hidden justify-center relative ">
+      <Image
+        width={0}
         height={0}
         //loading='lazy'
-      	priority={true}
-        sizes='100vw' src="/Consultas_Psicologia_Barcelos_Ricardo_Linhares_Psicologo.jpg" alt="hero"
-        
-        className='bg-cover bg-center bg-no-repeat absolute -z-1 object-cover w-full h-full opacity-40'
-        />
-  <div className=" z-10 flex flex-1 flex-col sm:flex-row items-center px-8 md:px-24 flex-wrap sm:flex-nowrap justify-center sm:justify-around max-w-screen-2xl  self-center">
-        <div className="flex gap-4  flex-1 sm:pr-12 2xl:pr-32 py-4 sm:pb-0 flex-col" >
-        <h1 className="text-xl  sm:text-4xl  font-bold text-left ">Psicologia Clínica - Barcelos</h1>
-            <p className=" text-lg sm:text-xl font-bold italic ">&ldquo;Até uma jornada de mil km começa com um simples passo...&ldquo;</p>
-           
+        priority={true}
+        sizes="100vw"
+        src="/hero.jpg"
+        alt="hero"
+        className="bg-cover bg-center bg-no-repeat absolute -z-1 object-cover w-full h-full "
+      />
+      <div className="z-10 flex  flex-col gap-8 max-w-7xl items-center sm:items-start justify-center mt-8">
+        <div className="flex flex-col gap-y-4 max-w-md  sm:max-w-max items-center md:items-start ">
+          <h1 className="text-7xl  font-patrick font-bold italic text-center md:text-left md:ml-4 mb-4 drop-shadow-md ">
+            {text[language].slogan}
+          </h1>
+          <div className="flex flex-col justify-center sm:ml-8 gap-4 drop-shadow-sm max-w-[500px]  ">
+            <p className=" text-lg sm:text-xl   ">
+              <strong>
+                DigitizeSupport interliga psicologia e tecnologia para lhe
+                ajudar a se conhecer melhor e a ter o apoio profissional que
+                precisa.
+              </strong>
+            </p>
+
+            <Button variant={"outline"} size={"lg"} className="w-full">
+              saber mais
+            </Button>
+          </div>
         </div>
-        <div className="flex flex-1 flex-col gap-y-3 pb-3 sm:pb-3 w-full">
-          <ul className='list-disc'>
-    
-            <li className="text-md sm:text-lg font-bold mb-3">Psicoterapia / Terapia</li>
-            <li className="text-md sm:text-lg font-bold mb-3">Acompanhamento e Aconselhamento Psicológico</li>
-            <li className=" text-md sm:text-lg font-bold">Consultoria em Psicologia do Trabalho e Organizações</li>
+        <span className="flex flex-1 flex-wrap max-w-lg  md:max-w-max lg:flex-nowrap gap-16 justify-center items-center self-center px-3 sm:px-12  ">
+          <CardMain
+            animate={true}
+            isVisible={isVisible}
+            title={text[language].card1Title}
+            desc={text[language].card1Desc}
+            link="/servicos/consultas"
+            imageUrl="/saude.png"
+          />
 
-          </ul>
-
-        </div></div>
+          <CardMain
+            animate={true}
+            isVisible={isVisible}
+            title={text[language].card2Title}
+            desc={text[language].card2Desc}
+            link="servicos/preparacao"
+            imageUrl="/rh.png"
+          />
+        </span>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Hero
+export default Hero;

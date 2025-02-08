@@ -68,3 +68,44 @@
     @apply bg-background text-foreground;
   }
 }
+
+@font-face {
+  font-family: 'Dancing Script';
+  src: url('../../public/DancingScript-VariableFont_wght.ttf') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Dancing Script';
+  src: url('../../public/DancingScript-VariableFont_wght.ttf') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gloria';
+  src: url('../../public/GloriaHallelujah-Regular.ttf') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gloria';
+  src: url('../../public/GloriaHallelujah-Regular.ttf') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Patrick';
+  src: url('../../public/PatrickHand-Regular.ttf') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Patrick';
+  src: url('../../public/PatrickHand-Regular.ttf') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
