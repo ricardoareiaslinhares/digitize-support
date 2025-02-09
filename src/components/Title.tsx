@@ -17,11 +17,11 @@ export default function TitleTypingEffect() {
       strings: [text[language].slogan_1, text[language].slogan_2], 
       typeSpeed: 50,
       backSpeed: 30, 
-      backDelay: 1700, 
+      backDelay: 1300, 
       loop: false,
       showCursor: false,
       cursorChar: "|",
-      startDelay: 600,
+      startDelay: 800,
       onComplete: () => {
         setTimeout(() => {
           if (typedRef.current ) {

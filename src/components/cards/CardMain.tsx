@@ -34,19 +34,18 @@ const CardMain = ({
     <div
       onClick={handleClick}
       className={`
-        transform transition-all duration-800 ease-out ${
-        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-      }
+        transform transition-all duration-1000 ease-out ${
+          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+        }
         
         cursor-pointer border-foreground/10 border-2 rounded-md shadow-md shadow-popover-foreground/5 flex bg-gradient-to-b ${
-        isVerticalOnly ? "from-card" : "from-muted"
-      }  to-card-cardb 
+          isVerticalOnly ? "from-card" : "from-muted"
+        }  to-card-cardb 
     hover:bg-gradient-to-b hover:from-card hover:to-muted
     active:bg-gradient-to-b active:from-card-cardb active:to-muted
     ${
       isVerticalOnly ? "flex-col max-w-sm h-[500px] " : "sm:flex-row  "
     } flex-col  sm:pl-2 w-full 2xl:w-6/12  items-center justify-center `}
-
     >
       <div className="flex items-center sm:basis-2/5   ">
         <Image
