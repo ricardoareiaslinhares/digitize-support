@@ -17,7 +17,7 @@ export default function TitleTypingEffect() {
       strings: [text[language].slogan_1, text[language].slogan_2], 
       typeSpeed: 50,
       backSpeed: 30, 
-      backDelay: 1300, 
+      backDelay: 1100, 
       loop: false,
       showCursor: false,
       cursorChar: "|",

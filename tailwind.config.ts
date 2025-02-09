@@ -85,12 +85,18 @@ const config = {
         fadeIn: {
           '0%': { opacity: '0' },
           '100%': { opacity: '1' },
-        }
+        },
+        waterspout: {
+          "0%": { transform: "rotate(0deg) scale(0.8)" },
+          "50%": { transform: "rotate(180deg) scale(1.2)" },
+          "100%": { transform: "rotate(360deg) scale(0.8)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        'fade-in': 'fadeIn 3s ease-in-out'
+        'fade-in': 'fadeIn 3s ease-in-out',
+        "waterspout": "waterspout 6s ease-in-out infinite",
       },
     },
   },

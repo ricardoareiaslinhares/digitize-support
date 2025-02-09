@@ -8,6 +8,7 @@ import FooterCredits from "@/components/footer/FooterCredits";
 import { Separator } from "@/components/ui/separator";
 import { GoogleAnalytics } from '@next/third-parties/google'
 import { MessageContextProvider } from "@/context/message";
+import ContactButton from "@/components/ContactButton";
 
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
@@ -55,6 +56,7 @@ export default function RootLayout({
           <div className="flex items-center justify-center flex-col">
             {children}
             <Separator className="bg-foreground/10" />
+            <ContactButton />
             <div className="w-full  bg-muted  flex items-center justify-center">
               <div className="max-w-screen-2xl flex items-center justify-center ">
                 <FooterCredits />

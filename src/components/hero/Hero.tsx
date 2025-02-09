@@ -7,6 +7,8 @@ import { language } from "@/utils/language";
 import CardMain from "../cards/CardMain";
 import { Button } from "../ui/button";
 import TitleTypingEffect from "@/components/Title";
+import HeroImage from "../HeroImage";
+
 
 const Hero = ({}: Props) => {
   const [isVisible, setIsVisible] = useState(false);
@@ -19,16 +21,7 @@ const Hero = ({}: Props) => {
   }, []);
   return (
     <div className="flex flex-row w-full min-h-[580px]  overflow-hidden justify-center relative pb-8 -mt-16 ">
-      <Image
-        width={0}
-        height={0}
-        //loading='lazy'
-        priority={true}
-        sizes="100vw"
-        src="/hero.jpg"
-        alt="hero"
-        className="bg-cover bg-center bg-no-repeat absolute -z-1 object-cover w-full h-full brightness-90"
-      />
+    <HeroImage />
       <div className="z-10 flex  flex-col gap-8 max-w-7xl items-center sm:items-start sm:min-w-full  mt-20">
         <div className="flex flex-col gap-y-4 max-w-md  sm:max-w-max items-center md:items-start ">
           <TitleTypingEffect />
@@ -39,6 +32,7 @@ const Hero = ({}: Props) => {
 
             <hr className="border-t-2 border-white"/>
           </div>
+
         </div>
         <p className=" text-xl sm:text-2xl text-white leading-8  text-center self-center font-semibold animate-fade-in ">
           {text[language].services}
