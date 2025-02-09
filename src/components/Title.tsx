@@ -6,14 +6,15 @@ import { language } from "@/utils/language";
 
 
 export default function TitleTypingEffect() {
-  const typedRef = useRef(null);
+  const typedRef = useRef<HTMLSpanElement | null>(null)
   const [showCursor, setShowCursor] = useState(true);
 
 
 
   useEffect(() => {
+
     const typed = new Typed(typedRef.current, {
-      strings: ["Psicologia Digital: Compreenda-se", "Psicologia Digital: Evolua"], 
+      strings: [text[language].slogan_1, text[language].slogan_2], 
       typeSpeed: 50,
       backSpeed: 30, 
       backDelay: 1700, 
@@ -21,6 +22,13 @@ export default function TitleTypingEffect() {
       showCursor: false,
       cursorChar: "|",
       startDelay: 600,
+      onComplete: () => {
+        setTimeout(() => {
+          if (typedRef.current ) {
+            typedRef.current.innerHTML  += "."; // Adds the last char "." with a delay
+          }
+        }, 800);
+      },
      
     });
 
