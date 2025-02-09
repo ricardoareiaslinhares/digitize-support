@@ -6,16 +6,16 @@ import text from "@/data/text.json";
 import { language } from "@/utils/language";
 import CardMain from "../cards/CardMain";
 import { Button } from "../ui/button";
-import { time } from "console";
+import TitleTypingEffect from "@/components/Title";
 
 const Hero = ({}: Props) => {
   const [isVisible, setIsVisible] = useState(false);
   useEffect(() => {
-    // make a timeout function
+
     const timeout = setTimeout(() => {
       setIsVisible(true);
     }, 300);
-    // clear the timeout function
+
     return () => clearTimeout(timeout);
   }, []);
   return (
@@ -32,9 +32,7 @@ const Hero = ({}: Props) => {
       />
       <div className="z-10 flex  flex-col gap-8 max-w-7xl items-center sm:items-start justify-center mt-20">
         <div className="flex flex-col gap-y-4 max-w-md  sm:max-w-max items-center md:items-start ">
-          <h1 className="text-7xl  font-patrick font-bold italic text-center md:text-left md:ml-4 mb-4 drop-shadow-md text-white  ">
-            {text[language].slogan}
-          </h1>
+        <TitleTypingEffect />
           <div className="flex flex-col justify-center sm:ml-8 gap-4 drop-shadow-sm max-w-[500px]  ">
             <p className=" text-lg sm:text-xl text-white   ">
               <strong className="leading-8">
