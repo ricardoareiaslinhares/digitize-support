@@ -49,11 +49,11 @@ const FullNavbar = ({}: Props) => {
 
   return (
     <nav
-      className={`flex h-16 sticky top-0 left-0 flex-row w-full z-50 justify-between items-center px-8 bg-background/0  transition-colors duration-300 ${
-        scrolled ? "bg-white shadow-md text-black" : "bg-transparent text-white"
+      className={`flex h-16 sticky top-0 left-0 flex-row w-full z-50 justify-between items-center px-8   transition-colors duration-300 ${
+        scrolled ? "bg-background  shadow-md text-black dark:text-white" : "bg-transparent text-white"
       }`}
     >
-      <Logo />
+      <Logo  scrolled={scrolled}/>
       <span>
         <NavbarShad myLinks={myLinks} scrolled={scrolled} />
         <Drawer myLinks={myLinks} />
