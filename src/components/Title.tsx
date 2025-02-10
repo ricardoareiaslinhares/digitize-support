@@ -13,7 +13,10 @@ export default function TitleTypingEffect() {
 
   useEffect(() => {
     const typed = new Typed(typedRef.current, {
-      strings: [text[language].slogan_1, text[language].slogan_2], 
+      strings: [
+        `${text[language].slogan_1}<br>${text[language].slogan_2}`, 
+        `${text[language].slogan_1}<br>${text[language].slogan_3}`
+      ], 
       typeSpeed: 50,
       backSpeed: 30, 
       backDelay: 1100, 
@@ -42,7 +45,7 @@ export default function TitleTypingEffect() {
   }, []);
 
   return (
-    <h1 className="  text-6xl  font-patrick font-bold  text-center md:text-left md:ml-4 mb-4 drop-shadow-md text-white uppercase  ">
+    <h1 className="min-h-[120px]  text-6xl  font-patrick font-bold  text-center md:text-left md:ml-4 mb-4 drop-shadow-md text-white uppercase  ">
       <span ref={typedRef}></span>
       {showCursor && <span className="typed-cursor">|</span>}
     </h1>

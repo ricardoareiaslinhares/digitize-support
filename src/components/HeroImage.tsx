@@ -24,7 +24,6 @@ export default function HeroImage() {
       sizes="100vw"
       src="/hero.jpg"
       alt="hero"
-      layout="fill"
       style={{
         transform: `scale(${scale})`,
         transition: "transform 0.1s ease-out",

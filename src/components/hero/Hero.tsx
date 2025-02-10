@@ -23,7 +23,7 @@ const Hero = ({}: Props) => {
       
 
     <HeroImage />
-      <div className="z-10 flex  flex-col gap-8 max-w-7xl items-center sm:items-start sm:min-w-full  mt-20">
+      <div className="z-10 flex  flex-col gap-8 max-w-7xl items-center sm:items-start sm:min-w-full  mt-20 px-4">
         <div className="flex flex-col gap-y-4 max-w-md  sm:max-w-max items-center md:items-start ">
           <TitleTypingEffect />
               <div className="flex flex-col justify-center sm:ml-8 gap-4 drop-shadow-sm max-w-[500px]  ">

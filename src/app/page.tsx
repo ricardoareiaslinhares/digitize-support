@@ -7,6 +7,7 @@ import Footer from "@/components/footer/Footer";
 import ModalContacts2 from "@/components/modals/ModalContacts2";
 import { Metadata } from "next";
 import Head from "next/head";
+import ReactangleCard from "@/components/rectangleCard/ReactangleCard";
 
 
 export const metadata:Metadata = {
@@ -41,12 +42,7 @@ export default function Home() {
         <section className="flex flex-1 w-full max-w-screen-2xl  px-8 md:px-24 pt-8 flex-col">
           <SectionText isH="h1" title={text[language].section1Title} />
           <div className="flex flex-1 gap-x-10 items-center justify-center gap-y-4 flex-row flex-wrap ">
-            <div>
-              <SectionText desc1={text[language].section1Desc1} />
-            </div>
-            <div>
-              <SectionText desc1={text[language].section1Desc2} />
-            </div>
+             <ReactangleCard/> 
           </div>
         </section>
         <section className="flex flex-1 flex-row w-full pt-8 max-w-screen-2xl   ">
