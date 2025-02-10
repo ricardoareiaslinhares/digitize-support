@@ -12,7 +12,6 @@ export default function TitleTypingEffect() {
 
 
   useEffect(() => {
-
     const typed = new Typed(typedRef.current, {
       strings: [text[language].slogan_1, text[language].slogan_2], 
       typeSpeed: 50,

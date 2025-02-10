@@ -96,7 +96,6 @@ const config = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         'fade-in': 'fadeIn 3s ease-in-out',
-        "waterspout": "waterspout 6s ease-in-out infinite",
       },
     },
   },
