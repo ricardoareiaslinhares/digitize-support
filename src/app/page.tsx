@@ -8,42 +8,34 @@ import ModalContacts2 from "@/components/modals/ModalContacts2";
 import { Metadata } from "next";
 import Head from "next/head";
 import ReactangleCard from "@/components/rectangleCard/ReactangleCard";
-import ReactangleCardMirror from "@/components/rectangleCard/ReactangleCardMirror";
 
-
-export const metadata:Metadata = {
-  robots:{
-    index:true,
-    follow:true,
+export const metadata: Metadata = {
+  robots: {
+    index: true,
+    follow: true,
     googleBot: {
       index: true,
     },
-    
-
-  }
-}
+  },
+};
 
 export default function Home() {
   let language = "pt" as keyof typeof text;
 
-  
-
-
-
   return (
     <>
-  <Head>
-  <meta name="robots" content="all" />
-  <meta name="robots" content="index, follow"/>
-  </Head>
-     <ModalContacts2  /> 
+      <Head>
+        <meta name="robots" content="all" />
+        <meta name="robots" content="index, follow" />
+      </Head>
+      <ModalContacts2 />
 
       <main className="flex min-h-screen flex-col items-center justify-between  w-screen z-0 ">
         <Hero />
         <section className="flex flex-1 w-full max-w-screen-2xl  px-8 md:px-24 pt-8 flex-col">
           <SectionText isH="h1" title={text[language].section1Title} />
           <div className="flex flex-1 gap-x-10 items-center justify-center gap-y-4 flex-row flex-wrap ">
-             <ReactangleCard/> 
+            <ReactangleCard />
           </div>
         </section>
         <section className="flex flex-1 flex-row w-full pt-8 max-w-screen-2xl   ">
@@ -81,8 +73,6 @@ export default function Home() {
             <Footer />
           </div>
         </div>
-
-       
       </main>
     </>
   );
