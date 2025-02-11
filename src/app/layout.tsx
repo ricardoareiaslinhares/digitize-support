@@ -16,7 +16,7 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 export const metadata: Metadata = {
   metadataBase: new URL("https://ricardolinhares.pt"),
   
-  title: "Ricardo Linhares Consultas de Psicologia Barcelos",
+  title: "DigitizeSupport - Psychology Health Services",
   robots:{
     index:true,
     follow:true,

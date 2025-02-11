@@ -134,7 +134,7 @@ export function Drawer({ myLinks }: Props) {
           <RenderNav />
         </nav>
         <span className="flex flex-1 flex-row justify-center  items-center">
-          <ThemeToggle />
+          <ThemeToggle scrolled={false} />
         </span>
         <SheetFooter></SheetFooter>
       </SheetContent>
