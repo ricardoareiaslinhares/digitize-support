@@ -9,7 +9,7 @@ function getWindowDimensions() {
   };
 }
 const useWindowSize = () => {
-  const [width, setWidth] = useState(Number || 0);
+  const [width, setWidth] = useState(() => window.innerWidth || 0);
 
   useEffect(() => {
     const handleResize = () => setWidth(window.innerWidth);
