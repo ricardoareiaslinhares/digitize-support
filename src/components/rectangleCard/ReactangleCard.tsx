@@ -1,9 +1,10 @@
 "use client";
-import React, { useCallback, useEffect, useState } from "react";
+import React, { use, useCallback, useEffect, useState } from "react";
 import Image from "next/image";
 type Props = {};
 import { motion, inView, useInView, useAnimation } from "framer-motion";
 import { useRef } from "react";
+import useWindowSize from "@/lib/useWindowSize";
 
 const ReactangleCard = (props: Props) => {
   const refImage = useRef(null);
@@ -12,11 +13,19 @@ const ReactangleCard = (props: Props) => {
   const isInViewText = useInView(refText, { once: true });
   const [isHovered, setIsHovered] = useState(false);
 
- 
+  const width = useWindowSize();
+  const isMobile = width < 640 && width !== 0;
+
+
+const handleHovered = () => {
+  setIsHovered(!isHovered);
+  console.log(isMobile)
+  console.log(width)
+}
 
   return (
     <div className="">
-      <div className="w-full min-h-[400px] flex flex-1 flex-row justify-end items-center mt-12">
+      <div className="w-full min-h-[400px] flex flex-1 flex-col-reverse sm:flex-row justify-center sm:justify-end items-center mt-12">
         <motion.div
           ref={refText}
           initial={{ x: -150, opacity: 0 }}
@@ -27,34 +36,34 @@ const ReactangleCard = (props: Props) => {
           <motion.div
             whileHover={{ height: 340 }}
             transition={{ duration: 0.3 }}
-            className=" overflow-hidden translate-x-12 flex items-center bg-slate-200 flex-1 flex-col justify-center "
-            onMouseEnter={() => setIsHovered(true)}
+            className=" overflow-hidden -translate-y-12 sm:-translate-y-0 sm:translate-x-12 flex  bg-slate-200 flex-1 flex-col justify-center items-center mx-12 sm:mx-0"
+            onMouseEnter={() => handleHovered()}
             onMouseLeave={() => setIsHovered(false)}
           >
-            <p className="w-[600px] h-[100px] text-center p-4 ">
+            <p className="w-full  sm:m-0 md:w-[600px] md:h-[100px] text-center p-4  ">
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rerum
               veniam quas modi, dolorem eos corrupti nulla provident iste quam
               accusantium ab a, ea qui sapiente cum eum praesentium, iusto
-              culpa.
+              culpa. {width}
             </p>
             <motion.div
               initial={{
-                opacity: 0,
-                y: -10,
-                position: "absolute",
-                color: "transparent",
-              }} // Hidden by default
+                opacity: isMobile ? 1 : 0,
+                y:isMobile ? 0 : -10,
+                position: isMobile ? "relative" : "absolute",
+                color: isMobile ? "black" : "transparent",
+              }} 
               animate={{
-                opacity: isHovered ? 1 : 0,
-                y: isHovered ? 0 : -10,
-                color: isHovered ? "black" : "transparent",
-                position: isHovered ? "relative" : "absolute",
+                opacity: isMobile ? 1 : isHovered ? 1 : 0,
+                y: isMobile ? 0 : isHovered ? 0 : -10,
+                color: isMobile ? "black" : isHovered ? "black" : "transparent",
+                position: isMobile ? "relative" : isHovered ? "relative" : "absolute",
               }}
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.3 }}
-              className="opacity-0 text-center mt-4"
+              className="opacity-1 text-center  sm:opacity-0 flex flex-1 sm:flex-none"
             >
-              <p className=" w-[600px] text-center p-4">
+              <p className=" w-full mx-6 sm:m-0 md:w-[600px] text-center p-4">
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rerum
               </p>
             </motion.div>
@@ -84,3 +93,4 @@ const ReactangleCard = (props: Props) => {
 };
 
 export default ReactangleCard;
+

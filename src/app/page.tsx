@@ -44,7 +44,6 @@ export default function Home() {
           <SectionText isH="h1" title={text[language].section1Title} />
           <div className="flex flex-1 gap-x-10 items-center justify-center gap-y-4 flex-row flex-wrap ">
              <ReactangleCard/> 
-             <ReactangleCardMirror/>
           </div>
         </section>
         <section className="flex flex-1 flex-row w-full pt-8 max-w-screen-2xl   ">
