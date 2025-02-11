@@ -128,7 +128,7 @@ export function Drawer({ myLinks }: Props) {
         }`}
       >
         <SheetHeader>
-          <SheetTitle className="pr-8 text-left">Ricardo Linhares Consultas de Psicologia </SheetTitle>
+          <SheetTitle className="pr-8 text-left">DigitizeSupport</SheetTitle>
         </SheetHeader>
         <nav className="flex flex-1 flex-col mt-8  gap-6 p-4 items-start mb-8 ">
           <RenderNav />
