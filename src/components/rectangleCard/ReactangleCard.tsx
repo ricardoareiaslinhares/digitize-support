@@ -11,23 +11,8 @@ const ReactangleCard = (props: Props) => {
   const refText = useRef(null);
   const isInViewText = useInView(refText, { once: true });
   const [isHovered, setIsHovered] = useState(false);
-  const controls = useAnimation();
 
-
-  useEffect(() => {
-    console.log(isHovered)
-    while (isHovered) {
-        controls.start({
-         scale: 1.1,
-         transition: { duration: 1, ease: "easeInOut" },
-       });
-        controls.start({
-         scale: 1,
-         transition: { duration: 1, ease: "easeInOut" },
-       });
-     } 
-
-  }, [isHovered]);
+ 
 
   return (
     <div className="">
@@ -82,16 +67,7 @@ const ReactangleCard = (props: Props) => {
           transition={{ duration: 0.5 }}
           className="-z-1"
         >
-          <motion.img
-            src="/hero.jpg"
-            width={0}
-            height={0}
-            sizes="100vw"
-            alt="Parallax Image"
-            animate={controls}
-            className="bg-cover bg-center bg-no-repeat  object-cover w-[500px] h-[300px] brightness-90 transition-transform duration-200"
-          />
-          {/*           <Image
+          <Image
             width={0}
             height={0}
             //loading='lazy'
@@ -100,7 +76,7 @@ const ReactangleCard = (props: Props) => {
             src="/hero.jpg"
             alt="hero"
             className="bg-cover bg-center bg-no-repeat  object-cover w-[500px] h-[300px] brightness-90 transition-transform duration-200"
-          /> */}
+          />
         </motion.div>
       </div>
     </div>
