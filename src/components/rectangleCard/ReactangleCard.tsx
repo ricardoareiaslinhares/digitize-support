@@ -1,8 +1,8 @@
 "use client";
-import React, { useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import Image from "next/image";
 type Props = {};
-import { motion, inView, useInView } from "framer-motion";
+import { motion, inView, useInView, useAnimation } from "framer-motion";
 import { useRef } from "react";
 
 const ReactangleCard = (props: Props) => {
@@ -11,6 +11,23 @@ const ReactangleCard = (props: Props) => {
   const refText = useRef(null);
   const isInViewText = useInView(refText, { once: true });
   const [isHovered, setIsHovered] = useState(false);
+  const controls = useAnimation();
+
+
+  useEffect(() => {
+    console.log(isHovered)
+    while (isHovered) {
+        controls.start({
+         scale: 1.1,
+         transition: { duration: 1, ease: "easeInOut" },
+       });
+        controls.start({
+         scale: 1,
+         transition: { duration: 1, ease: "easeInOut" },
+       });
+     } 
+
+  }, [isHovered]);
 
   return (
     <div className="">
@@ -36,22 +53,25 @@ const ReactangleCard = (props: Props) => {
               culpa.
             </p>
             <motion.div
-              initial={{ opacity: 0, y: -10, position: "absolute", color: "transparent" }} // Hidden by default
+              initial={{
+                opacity: 0,
+                y: -10,
+                position: "absolute",
+                color: "transparent",
+              }} // Hidden by default
               animate={{
                 opacity: isHovered ? 1 : 0,
                 y: isHovered ? 0 : -10,
                 color: isHovered ? "black" : "transparent",
                 position: isHovered ? "relative" : "absolute",
               }}
-                exit={{ opacity: 0, y: -10 }} 
+              exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.3 }}
               className="opacity-0 text-center mt-4"
             >
               <p className=" w-[600px] text-center p-4">
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rerum
-
               </p>
-
             </motion.div>
           </motion.div>
         </motion.div>
@@ -62,8 +82,16 @@ const ReactangleCard = (props: Props) => {
           transition={{ duration: 0.5 }}
           className="-z-1"
         >
-            
-          <Image
+          <motion.img
+            src="/hero.jpg"
+            width={0}
+            height={0}
+            sizes="100vw"
+            alt="Parallax Image"
+            animate={controls}
+            className="bg-cover bg-center bg-no-repeat  object-cover w-[500px] h-[300px] brightness-90 transition-transform duration-200"
+          />
+          {/*           <Image
             width={0}
             height={0}
             //loading='lazy'
@@ -72,7 +100,7 @@ const ReactangleCard = (props: Props) => {
             src="/hero.jpg"
             alt="hero"
             className="bg-cover bg-center bg-no-repeat  object-cover w-[500px] h-[300px] brightness-90 transition-transform duration-200"
-          />
+          /> */}
         </motion.div>
       </div>
     </div>
